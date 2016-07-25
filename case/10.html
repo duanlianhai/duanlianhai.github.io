@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  <style>
+        @keyframes move{
+            from{
+                left: 0;
+            }
+            to{
+                left: -100%;
+            }
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #box{
+            width: 500px;
+            height: 30px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        #bar{
+            width: 200%;
+            height: 100%;
+            background: -webkit-repeating-linear-gradient(45deg, red 0, red 10px, blue 10px, blue 20px);
+            position: absolute;
+            left: 0;
+            top: 0;
+            animation: 4s move linear infinite;
+        }
+        #box:hover #bar{
+            left: -100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="bar"></div>
+    </div>
+</body>
+</html>
+
+
+

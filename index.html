@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+	<title>Document</title>
+	<style>
+
+		*{margin: 0; padding: 0; list-style: none;}
+		.div1{width:auto; position:fixed; z-index:-1; left: 0;top: 0;right: 0;bottom: 0; background: url(img/12.jpg) top right;background-size:100% 100%;}
+		.count{width:600px; height:600px; border-radius: 50%; border: 1px solid #999; position:fixed; left: 87%; top:85%; margin-left:-450px; margin-top: -450px; overflow: hidden; /*background:url(img/1.jpg) no-repeat center; background-size: cover;*/}
+		.count p{width:100%; height:20%; text-align: center;border: 1px solid #ccc; color:#fff; padding-top: 5%;}
+		.count p.active{background: rgba(206,215,250,.5);}
+
+		ul{width: 100%;}
+		ul li{background: red;display: none;padding:; width: 80%; position: absolute;left: 0;top: 0;right: 0;bottom: 0; z-index: -1;padding: 192px;}
+		ul .first{overflow: hidden;}
+		ul .first div{float:left; padding: 20px;}
+		ul .first div h1{margin-bottom: 30px; color: #fff; transition: 1s all ease;}
+		ul .first div h1:hover{text-shadow:0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;}
+		ul .first div h2{margin-bottom: 30px;text-shadow: 2px 2px 0px blue;transition: 1s all ease;}
+		ul .first div h2:hover{text-shadow: 20px 20px 50px red;}
+		ul .first div h3{margin-bottom: 30px;text-shadow: 2px 2px 2px #fff,4px 4px 2px red;color: red;}
+		ul .first .first-1{padding-top:145px;}
+		ul .first div p{line-height: 50px;  text-shadow: 4px 4px 3px red;}
+		ul .first img{width:400px;}
+		ul .case a{width: 400px; height: 300px; background: red;float: left; margin: 50px;}
+		ul .case a img{width:100%; height: 100%;}
+	ul .last{/*background:url(img/bj4.png) no-repeat right top #d4fbf8;*/}
+		ul .last span{width:200px; color: #fff; font-size:50px; line-height: 142px;text-shadow: 5px 5px 5px #FF0000; }
+	</style>
+	<script src="move.js"></script>
+	<script>
+		window.onload=function(){	
+			var oDiv=document.getElementById('div1');
+			var oCount=oDiv.children[0];
+			var aP=oCount.getElementsByTagName('p');
+			var oUl=document.getElementById('ul');
+			var aLi=oUl.getElementsByTagName('li');
+
+			for(var i=0;i<aP.length;i++){
+					aP[i].index=i;
+					aP[i].onclick=function(){
+						move(oCount,{width:200,height:200,top:0,marginLeft:0,marginTop:0,left:0});
+						for(var i=0;i<aP.length;i++){
+							aP[i].className='';
+							aLi[i].style.display='';
+						}
+						this.className='active';	
+						aLi[this.index].style.display='block';
+					}
+				}
+		}
+	
+	</script>
+</head>
+<body>
+	<div class="div1" id="div1">
+		<div class="count">
+			<p>关于我</p>
+			<p>H5/CSS3作品展示</p>
+			<p>JS作品展示</p>
+			<p>联系我</p>
+		</div>
+		<ul id="ul">
+			<li style="background:url(img/bj11.jpg); background-size:cover;" class="first">
+				<div>
+					<img src="img/13.jpg" alt="" />
+				</div>
+				<div>
+					<h1>姓名：<span>段连海</span></h1>
+					<h2>前端工程师</h2>
+					<h3>工作经验</h3>
+					<p>2009-2010</p>
+					<p>2010-2013</p>
+					<p>2013-2014</p>
+					<p>2014-2016</p>
+					<p>2016-20至今</p>
+					<p>谢谢</p>
+				</div>
+				<div class="first-1">
+					<h3>技能</h3>
+					<p>html5:掌握75%	</p>
+					<p>css3:掌握75%</p>
+					<p>js:原生JS | jquery | mvc </p>
+				</div>
+			</li>
+			<li style="background:url(img/bj12.jpg); background-size: cover;"class="case">
+				<a href="case/8.html" target="_Blank">
+					<img src="img/8.png" alt="">
+				</a>
+				<a href="case/9.html" target="_Blank">
+					<img src="img/9.png" alt="">
+				</a>
+				<a href="case/10.html" target="_Blank">
+					<img src="img/10.png" alt="">
+				</a>
+				<a href="case/11.html" target="_Blank">
+					<img src="img/11.png" alt="">
+				</a>
+				<a href="case/12.html" target="_Blank">
+					<img src="img/12.png" alt="">
+				</a>
+				<a href="case/13.html" target="_Blank">
+					<img src="img/13.png" alt="">
+				</a>
+			</li>
+			<li style="background:url(img/bj13.jpg); background-size: cover;" class="case">
+				<a href="case/2.html" target="_Blank">
+					<img src="img/1.png" alt="">
+				</a>
+				<a href="case/3.html" target="_Blank">
+					<img src="img/2.png" alt="">
+				</a>
+				<a href="case/4.html" target="_Blank">
+					<img src="img/3.png" alt="">
+				</a>
+				<a href="case/5.html" target="_Blank">
+					<img src="img/4.jpg" alt="">
+				</a>
+				<a href="case/6.html" target="_Blank">
+					<img src="img/5.png" alt="">
+				</a>
+				<a href="case/7.html" target="_Blank">
+					<img src="img/6.png" alt="">
+				</a>
+			</li>
+			<li style="background:url(img/bj14.jpg); background-size: cover;" class="last">
+					<span>如果中意我，请联系我！</span>
+					<br>
+					<span>QQ:546729929</span>
+					<br>
+					<span>TEL:13426292743/18500866680</span>
+					<br>
+					<span>MAIL:dlh1988331@sina.com</span>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
